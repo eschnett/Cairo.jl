@@ -23,7 +23,7 @@ import Graphics: arc, clip, clip_preserve, close_path, creategc, device_to_user!
 import Base: copy, fill
 
 libcairo_version = VersionNumber(unsafe_string(
-      ccall((:cairo_version_string,Cairo_jll.libcairo),Cstring,()) ))
+      ccall((:cairo_version_string,libcairo),Cstring,()) ))
 libpango_version = VersionNumber(unsafe_string(
       ccall((:pango_version_string,Pango_jll.libpango),Cstring,()) ))
 if !Sys.iswindows()
